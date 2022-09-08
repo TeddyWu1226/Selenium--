@@ -16,3 +16,5 @@
 3.網頁代碼抓取後，透過Beautiful Soup進行解析後，建立並寫入本地excel檔存取。
 
 ![1662621351363](https://user-images.githubusercontent.com/103618758/189059529-90199dc3-f9f6-415f-9bae-76b8b9622685.jpg)
+
+※本程式為練習爬蟲使用，短時間內多次運行有極高機率遭阻擋，請勿泛用。
