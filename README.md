@@ -1,6 +1,8 @@
 # Selenium-台灣證券交易所資料抓取(爬蟲)
 透過Selenium抓取網頁中Script設定的內容，以台灣證券交易所為例。
 
+資料來源:https://www.twse.com.tw/zh/page/trading/exchange/MI_INDEX.html
+
 1.設計簡易輸入，依提供之規則輸入即可。
 
 ![1662621154926](https://user-images.githubusercontent.com/103618758/189059147-f0d020e5-26c1-4425-a8aa-6aa26c1943b0.jpg)
