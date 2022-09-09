@@ -73,19 +73,17 @@ def selenium_selection(category=35, year=0, month=0, date=3):  # 從零開始數
     element[1].click()
     time.sleep(0.2)  # 給他跑一下
     # 判斷是否有資料
-
-    soup = BeautifulSoup(driver.page_source, 'html.parser')
-    #print(soup)
-    soup.find(id="result-message")
     try:
         test = soup.select("#result-message")[0].string
-    except AttributeError:
-        print("無資料，請重新選擇日期")
+        # 展開所有股票
+        select = Select(driver.find_element(By.NAME, 'report-table1_length'))  # 類型分類為report-table1_length
+        select.select_by_index(4)
+    except:
+        print("無資料，請重新選擇日期或類別")
         driver.close()  # 關掉網頁
         exit()
-    # 展開所有股票
-    select = Select(driver.find_element(By.NAME, 'report-table1_length'))  # 類型分類為report-table1_length
-    select.select_by_index(4)
+    
+    
 
     # BS4
     soup = BeautifulSoup(driver.page_source, 'html.parser')
@@ -100,7 +98,6 @@ def selenium_selection(category=35, year=0, month=0, date=3):  # 從零開始數
     data = soup.select(".data-table")[0].find_all("td")
     for i in range(len(data)):
         dataList.append(data[i].string)
-    #driver.close()   # 關掉網頁
 
 
     if '(元,股)' in colName:
